@@ -11,7 +11,7 @@ dotenv_path = join(dirname(__file__), '.env')
 credentials_path = join(dirname(__file__), 'service-account.json')
 load_dotenv(dotenv_path)
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'service-account.json'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.getenv('SERVICE_ACCOUNT_NAME')
 
 client = BetaAnalyticsDataClient()
 
